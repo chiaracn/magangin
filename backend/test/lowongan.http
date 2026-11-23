@@ -1,0 +1,73 @@
+### Variables
+@baseUrl = http://localhost:3000
+
+### 1. GET seluruh lowongan
+GET {{baseUrl}}/lowongan
+Accept: application/json
+
+### 2. GET detail lowongan berdasarkan ID yang valid (ID = 1)
+GET {{baseUrl}}/lowongan/1
+Accept: application/json
+
+### 3. POST menambahkan lowongan baru dengan data valid
+POST {{baseUrl}}/lowongan
+Content-Type: application/json
+
+{
+  "posisi": "Mobile Flutter Developer Intern",
+  "perusahaan": "Sinergi Media Kreasi",
+  "lokasi": "Bandung",
+  "tipe": "Hybrid",
+  "durasi": 6,
+  "gaji": 1600000,
+  "deskripsi": "Mengembangkan fitur mobile aplikasi menggunakan framework Flutter dan berkolaborasi dengan backend engineer.",
+  "skills": ["Flutter", "Dart", "REST API", "Git"]
+}
+
+### 4. POST dengan data tidak valid (Uji DTO validation - HTTP 400 Bad Request)
+POST {{baseUrl}}/lowongan
+Content-Type: application/json
+
+{
+  "posisi": "AI",
+  "perusahaan": "A",
+  "lokasi": "J",
+  "tipe": "Freelance",
+  "durasi": 0,
+  "gaji": -50000,
+  "deskripsi": "Singkat",
+  "skills": "BukanArray"
+}
+
+### 5. POST data duplikat (Uji ConflictException - HTTP 409 Conflict)
+POST {{baseUrl}}/lowongan
+Content-Type: application/json
+
+{
+  "posisi": "Quality Assurance Intern",
+  "perusahaan": "NusaTech Solusi",
+  "lokasi": "Yogyakarta",
+  "tipe": "Onsite",
+  "durasi": 3,
+  "gaji": 1400000,
+  "deskripsi": "Mencoba menambahkan data dengan posisi dan perusahaan yang sudah terdaftar.",
+  "skills": ["Testing", "SQL"]
+}
+
+### 6. PATCH mengubah data lowongan (ID = 1)
+PATCH {{baseUrl}}/lowongan/1
+Content-Type: application/json
+
+{
+  "gaji": 1750000,
+  "durasi": 4,
+  "deskripsi": "Melakukan pengujian fungsional dan automated testing aplikasi web secara berkala."
+}
+
+### 7. DELETE menghapus data lowongan (ID = 2)
+DELETE {{baseUrl}}/lowongan/2
+Accept: application/json
+
+### 8. GET ID yang tidak tersedia (Uji NotFoundException - HTTP 404 Not Found)
+GET {{baseUrl}}/lowongan/999
+Accept: application/json

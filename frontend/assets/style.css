@@ -1,0 +1,92 @@
+/* MAGANGIN — CSS tambahan di atas Bootstrap (tanpa JavaScript) */
+:root{
+  --navy:#0E1A33; --navy-2:#142850; --teal:#0F9B8E; --amber:#E07A3E;
+  --bs-primary:#142850; --bs-primary-rgb:20,40,80;
+  --bs-success:#0F9B8E; --bs-success-rgb:15,155,142;
+  --bs-warning:#E07A3E; --bs-warning-rgb:224,122,62;
+  --bs-body-font-family:"Inter",system-ui,sans-serif;
+  --bs-body-bg:#F5F6FB; --bs-tertiary-bg:#F5F6FB; --bs-tertiary-bg-rgb:245,246,251;
+}
+html{scroll-behavior:smooth}
+h1,h2,h3,h4,h5,h6,.navbar-brand,.display-5,.display-6{font-family:"Space Grotesk","Inter",sans-serif;letter-spacing:-.01em}
+h2,h3,h4,h5,h6{color:var(--navy)}
+body{background:radial-gradient(circle at 100% 0,rgba(15,155,142,.10),transparent 32rem),#F5F6FB}
+
+/* Navbar */
+.navbar{background:linear-gradient(90deg,var(--navy),var(--navy-2))!important}
+.navbar .nav-link{color:#B9C4DA;border-radius:.5rem;padding:.5rem .8rem;transition:background .2s,color .2s}
+.navbar .nav-link:hover{background:rgba(255,255,255,.1);color:#fff}
+.navbar .nav-link.active{background:var(--teal)!important;color:#fff;box-shadow:0 4px 14px rgba(15,155,142,.45)}
+
+/* Header halaman */
+main>header{background:linear-gradient(120deg,var(--navy) 0%,var(--navy-2) 55%,#0F6F7A 100%)!important;position:relative;overflow:hidden;border-color:var(--teal)!important}
+main>header::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(15,155,142,.35);filter:blur(2px)}
+main>header>*{position:relative;z-index:1}
+
+/* Kartu */
+.card{border-radius:.9rem;transition:transform .2s,box-shadow .2s}
+.card.shadow-sm:hover{transform:translateY(-3px);box-shadow:0 .9rem 1.6rem rgba(14,26,51,.13)!important}
+details.card:hover,form.card:hover,#edit-profile:hover{transform:none}
+.border-success{border-color:var(--teal)!important}
+.text-success{color:var(--teal)!important}
+.display-5.text-primary{color:var(--navy)!important;background:linear-gradient(135deg,var(--navy),var(--teal));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* Logo perusahaan (warna asli) */
+.logo{display:inline-flex;align-items:center;justify-content:center;width:3rem;height:3rem;padding:0!important;border-radius:.7rem;font-family:"Space Grotesk",sans-serif;font-size:.95rem!important;color:#fff;box-shadow:0 4px 10px rgba(14,26,51,.18)}
+.logo.c-nusatech{background:#1a3f7b}
+.logo.c-vaktura{background:#B14D2E}
+.logo.c-lokadata{background:#1E7A6E}
+.logo.c-cakrawala{background:#5B3E96}
+.logo.c-swadesi{background:#C0842A}
+.logo.c-Unilever{background:#5e219a}
+.logo.c-Apple{background:#3425a3}
+
+/* Avatar bulat */
+.badge.rounded-circle{display:inline-flex;align-items:center;justify-content:center;aspect-ratio:1;font-family:"Space Grotesk",sans-serif}
+.badge.rounded-circle.bg-success{background:linear-gradient(135deg,var(--teal),var(--navy-2))!important}
+
+/* Tag / pill */
+.badge.rounded-pill{font-weight:600;padding:.4em .8em}
+.text-bg-success{background:#DCF3F0!important;color:#0B6E64!important}
+.text-bg-warning{background:#FBE7D8!important;color:#9A4A18!important}
+.text-bg-primary{background:#E9EBF5!important;color:#2A4374!important}
+.text-bg-light{background:#fff!important;color:#667085!important}
+
+/* Tombol */
+.btn{border-radius:.6rem;font-weight:600;transition:transform .15s,box-shadow .15s,background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-success{background:var(--teal);border-color:var(--teal);box-shadow:0 4px 12px rgba(15,155,142,.3)}
+.btn-success:hover{background:#0C8377;border-color:#0C8377}
+.btn-outline-primary{color:var(--navy-2);border-color:#C9D0E2}
+.btn-outline-primary:hover{background:var(--navy-2);border-color:var(--navy-2)}
+
+/* Form */
+.form-control,.form-select{border-radius:.6rem;background:#FCFCFE}
+.form-control:focus,.form-select:focus{border-color:var(--teal);box-shadow:0 0 0 .2rem rgba(15,155,142,.2)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+
+/* <details> & <summary> */
+summary{cursor:pointer;list-style:none;transition:background .2s}
+summary::-webkit-details-marker{display:none}
+details.card>summary::after{content:"＋";float:right;font-weight:700;color:var(--teal);font-size:1.3rem;line-height:1}
+details.card[open]>summary::after{content:"－"}
+details.card[open]{box-shadow:0 0 0 2px var(--teal),0 .9rem 1.6rem rgba(14,26,51,.1)!important}
+details.card>summary:hover{background:#F0FAF8!important}
+details:not(.card)>summary{padding:.4rem 0}
+
+/* Chat */
+.card-body.bg-body-tertiary .rounded-4{box-shadow:0 1px 3px rgba(14,26,51,.08)}
+.card-body.bg-body-tertiary .bg-primary{background:var(--navy-2)!important;border-bottom-right-radius:.25rem!important}
+.card-body.bg-body-tertiary .bg-white{border-bottom-left-radius:.25rem!important}
+
+/* List */
+.list-group-item-action:hover{background:#F0FAF8}
+.text-danger{color:var(--amber)!important}
+
+/* Modal & Toast */
+.modal-content{border-radius:.9rem;overflow:hidden}
+.toast{border-radius:.75rem;box-shadow:0 8px 24px rgba(14,26,51,.18)}
+.toast.bg-success{background:var(--teal)!important}
+.toast.bg-danger{background:var(--amber)!important}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
